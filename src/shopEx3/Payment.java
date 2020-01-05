@@ -1,14 +1,14 @@
 package shopEx3;
 
 	public class Payment extends Product{
-	    public static double[] priceDis=new double[5]; 
+	    
 		public static void makeDiscount(Object[] obj) {
 			try {
 			   for(int i=0;i<obj.length;i++) {
 				   Product p=(((Product)(obj[i])));
-				   priceDis[i]=p.getPrice()*0.85;
+				   p.setPrice(p.getPrice()*0.85);
 				   System.out.println(String.format("price after discount: %s %s %s"
-						   ,p.getSerialnum(),p.getName(),priceDis[i]));
+						   ,p.getSerialnum(),p.getName(),p.getPrice()));
 			   }
 			}catch(NullPointerException ex) {
 			      System.out.println("Null exception"+ex);
